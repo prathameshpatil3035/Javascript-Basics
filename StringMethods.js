@@ -182,3 +182,36 @@ var myString = "Hello";
 Array.from(myString).forEach(function (char) {
   console.log(char);
 });
+
+//Loop in String
+
+var myString = "Hello";
+
+// Using a for loop:
+for (var i = 0; i < myString.length; i++) {
+  console.log(myString[i]);
+}
+
+//Using a for...of loop:
+
+var myString = "Hello";
+
+for (var char of myString) {
+  console.log(char);
+}
+
+//Using forEach with split:
+
+var myString = "Hello";
+
+myString.split("").forEach(function (char) {
+  console.log(char);
+});
+
+//Using Array.from:
+
+var myString = "Hello";
+
+Array.from(myString).forEach(function (char) {
+  console.log(char);
+});
