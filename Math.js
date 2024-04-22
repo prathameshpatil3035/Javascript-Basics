@@ -66,3 +66,17 @@ let hypotenuse = Math.hypot(3, 4); // hypotenuse will be 5
 let positive = Math.sign(5); // positive will be 1
 let negative = Math.sign(-5); // negative will be -1
 let zero = Math.sign(0); // zero will be 0
+
+// Largest safe integer value
+console.log(Number.MAX_SAFE_INTEGER); // Output: 9007199254740991
+
+// Smallest safe integer value
+console.log(Number.MIN_SAFE_INTEGER); // Output: -9007199254740991
+
+// Creating a BigInt
+const bigIntValue = BigInt(Number.MAX_SAFE_INTEGER) + BigInt(1);
+console.log(bigIntValue); // Output: 9007199254740992n
+
+// Operations with BigInt
+const result = bigIntValue * BigInt(2);
+console.log(result); // Output: 18014398509481984n
