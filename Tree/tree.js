@@ -29,6 +29,41 @@ class BST {
     return root;
   }
 
+  search(value) {
+    return this.searchRecursive(this.root, value);
+  }
+
+  searchRecursive(root, value) {
+    if (root === null) {
+      return false;
+    }
+    if (root.data === value) {
+      return true;
+    }
+    if (value < root.data) {
+      return this.searchRecursive(root.left, value);
+    } else {
+      return this.searchRecursive(root.right, value);
+    }
+  }
+
+  //other one search method
+  search(value) {
+    return this.searchRecursive(this.root, value);
+  }
+
+  searchRecursive(root, value) {
+    if (root === null || root.data === value) {
+      return root;
+    }
+
+    if (value < root.data) {
+      return this.searchRecursive(root.left, value);
+    } else {
+      return this.searchRecursive(root.right, value);
+    }
+  }
+
   remove(value) {
     this.root = this.deleteRecursive(this.root, value);
   }
@@ -88,7 +123,7 @@ class BST {
 
   heightRecursive(root) {
     if (root === null) {
-      return 0;
+      return -1;
     }
     let leftHeight = this.heightRecursive(root.left);
     let rightHeight = this.heightRecursive(root.right);
@@ -222,6 +257,15 @@ tree.insert(40);
 tree.insert(70);
 tree.insert(60);
 tree.insert(80);
+
+// Searching for a value
+let searchValue = 60;
+let isFound = tree.search(searchValue);
+console.log(
+  "Search for",
+  searchValue + ":",
+  isFound ? "Node found" : "Node not found"
+);
 
 console.log("Level Order Traversal:", tree.levelOrder());
 console.log("Inorder Traversal:", tree.inOrder());
